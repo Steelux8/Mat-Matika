@@ -1,0 +1,3 @@
+This is an early version of a faction mod related to Tri-Tachyon, focused on a branch of mathematicians that were cast aside by the Company due to their theories not yielding anything productive against the cost of sustaining them.
+
+My plan is to add story to the mod that begins in the core and leads the player to a hidden facility in a faraway planet, where new people are found and the first practical results of the research are visible. After examining sensor ghosts, the mathematicians find answers through the theories they built over time, and they find horrors nobody was ever meant to see.

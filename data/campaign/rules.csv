@@ -1,0 +1,111 @@
+id,trigger,conditions,script,text,options,notes
+#RULESET_NAME FM,,,,,,
+,,,,,,
+# greetings,,,,,,
+greetingFMFriendly,OpenCommLink,"$faction.id == matmatika
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Welcome to Gensoukyou Manufacture!... thats all to say right?""
+OR
+""A future where humanity and mysticism coexist in harmony is upon us, and you and I have the privilege of being its first beneficiaries.. ""
+OR
+"".. Its difficult to have a youkai lover, right?"" for some reason $personName started talking about their love story, its shocking and a little bit embrassing.
+OR
+""Hello there, this is $personName. What can i help you with?""",,
+greetingFMHostileWeaker,OpenCommLink,"$faction.id == matmatika
+$faction.hostileToPlayer
+$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""I'm Ready to escape~daze！，But I don't think you'll be able to outrun the ensuing pursuit...""$personName isn't panicking as much as you thought, this person has already made an escape plan.
+OR
+""So, you're behind this incident?""$personRank sighed and disconnected the comm in frustration.
+OR
+""I-L-L-R-U-N-A-W-A-Y!""",cutCommLink:Cut the comm link,
+greetingFMHostileWeakerDefiant,OpenCommLink,"$faction.id ==  matmatika
+$faction.hostileToPlayer
+$relativeStrength < 0
+$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""Even if the end is disastrous, we will fight with all our might until the last moment!""It seems the $personRank has no intention of surrendering.
+OR
+""Miracles only come to those who believe!""$personName resolute voice came through the comm.",cutCommLink:Cut the comm link,
+greetingFMHostileStronger,OpenCommLink,"$faction.id == matmatika
+$faction.hostileToPlayer
+$relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""Do you want your family to be notified in advance of your death?""
+OR
+""Game Over!""$personRank looks at you smugly.
+OR
+""Don't worry, you will be reborn in a better world."" The other person seems to be trying to comfort you and seems very sincere..",cutCommLink:Cut the comm link,
+greetingFMNeutral,OpenCommLink,"$faction.id == matmatika
+$faction.neutralToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Heaven Above, may I ask what you want?""
+OR
+""Although our name sounds like a megacorp, we're not all that bourgeoisie...""$personName saw through your longstanding doubt and answered it.
+OR
+""Opened the comm link...I don't think you are an ordinary person after all.... ""
+OR
+""Even in the Persean sector, don't always be bound by common sense.""",,
+#END greetings,,,,,,
+,,,,,,
+# factions,,,,,,
+relLevelNeutralMM,RelationshipLevelDesc,"$faction.rel == NEUTRAL
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"Like any other human being, Gensoukyou Manufacture believes your relationship have little to do with them and everything is done according to common sense, but it's enough for normal cooperation.",,
+relLevelFavorableMM,RelationshipLevelDesc,"$faction.rel == FAVORABLE
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"Gensoukyou Manufacture sees you as a potentially important partner and would like to deepen their relationship with you further, you're be able to receive more relevant news and some free snacks.",,
+relLevelWelcomingFM,RelationshipLevelDesc,"$faction.rel == WELCOMING
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"Gensoukyou Manufacture has pretty much recognised you as an important partner, and you've been able to access upper tier of their already publicly available technology, while at the same time you've noticed a reduction in the frequency with which they try to push out weird little things to you.",,
+relLevelFriendlyMM,RelationshipLevelDesc,"$faction.rel == FRIENDLY
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"As a prominent partner within Gensoukyou Manufacture, You now have access to nearly all of Gensoukyou's publicly available technology. In addition to the previous free snacks, you can also get various interesting souvenir during cooperation negotiations, and sometimes members of civil organizations invite you to travel to their precincts.",,
+relLevelCooperativeMM,RelationshipLevelDesc,"$faction.rel == COOPERATIVE
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"The Sages of the Council are quite happy to share ideas and techniques with you, and despite the fact that many times you have made it clear that you don't quite understand exactly what they are talking about in their schematic notes and lectures, everyone is still happy that you are here.
+You now have easy access to all the technological products made public by Gensoukyou Manufacture, and have been given permission to participate in a number of experimental new projects.",,
+relLevelSuspiciousMM,RelationshipLevelDesc,"$faction.rel == SUSPICIOUS
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"Gensoukyou Manufacture is very confused about you, and your behaviour is making this group of fairly amiable(?) people feel uncomfortable. Even normal cooperation is relatively difficult now.",,
+relLevelInhospitableMM,RelationshipLevelDesc,"$faction.rel == INHOSPITABLE
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"What you've done has caused a small differences, and Gensoukyou Manufacture won't push anything on you at all now, not even small snacks! As for more core technological products, the Gensoukyou Manufacture technology you have access now is on the same level as pirates.",,
+relLevelHostileMM,RelationshipLevelDesc,"$faction.rel == HOSTILE
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"It is rare for Non-Luddic believer to receive this kind of treatment, Gensoukyou Manufacture believes you are bad enough that the inhabitants inside and outside the barrier will cut you in half. However, since these people dont have a desire to intervene, they aren't really motivated to  hunting you down. Therefore, there is no danger unless you take the initiative to approach their controlled area.",,
+relLevelVengefulMM,RelationshipLevelDesc,"$faction.rel == VENGEFUL
+$faction.id == matmatika",FireAll RelLevelMoreDescription,"Althought it appear to be calm, your action has basically hit the bottom line of Gensoukyou Manufacture, and your treatment has now been filed as a classic case requiring ""maximum restraint"".
+Unfortunately, all of your previously acquired Gensoukyou Products through legitimate way somehow become useless, and even the snacks you had stockpiled have somehow been crushed to pieces and are no longer crunchy at all.",,
+relLevelNeutralFM_CommissionedMM,RelLevelMoreDescription,"$faction.rel == NEUTRAL
+$faction.id == matmatika 
+$player.commissionFactionId == matmatika",,"You seem to have forgotten about the employment relationship with each other, but it seems like that's no big deal...",,
+relLevelFavorableFM_CommissionedMM,RelLevelMoreDescription,"$faction.rel == FAVORABLE
+$faction.id == matmatika 
+$player.commissionFactionId == matmatika",,"Gensoukyou Manufacture suggests that you memorise ""Commissioned Captain"" handbook they sent you, with thoughtful tips on how to get along with your non-human colleagues.",,
+relLevelWelcomingFM_CommissionedMM,RelLevelMoreDescription,"$faction.rel == WELCOMING
+$faction.id == matmatika 
+$player.commissionFactionId == matmatika",,"You handle both non-humans and humans relation quite well, and even the most bizzare youkai can communicate with you happily, as Gensoukyou Manufacture itself doesn't face any great threats, living as a captain for hire like this seems to be quite enjoyable. ",,
+relLevelFriendlyFM_CommissionedMM,RelLevelMoreDescription,"$faction.rel == FRIENDLY
+$faction.id == matmatika 
+$player.commissionFactionId == matmatika",,"Despite still being an hired outsider captain, the surrounding people in your fleet are urging you to give up the mercenary life and settle in Hakurei, as you're getting in touch with the mystical part of Gensoukyou Manufacture more deeply than ever before, and you're able to talk and laugh in the face of oddballs with the title of Great Youkai.",,
+relLevelCooperativeFM_CommissionedMM,RelLevelMoreDescription,"$faction.rel == COOPERATIVE
+$faction.id == matmatika 
+$player.commissionFactionId == matmatika",,"To reach such heights as a Captain for Hire is a rarity, even in Gensoukyou Manufacture, and the fleet people you've worked with have submitted a report to the higher-ups, and your name now appears fairly high on the list of planned large expeditionary fleets.",,
+#END factions,,,,,,
+,,,,,,
+# commission,,,,,,
+CMSNTextRejectHostile_MM,CMSNTextRejectHostile,$faction.id == matmatika,,"""If you can come to us in these circumstances and ask us these questions.... We would like to know if you have come to us to humiliate us or not...""",,
+CMSNTextHasOther_MM,CMSNTextHasOther,$faction.id == matmatika,,"""You're already commissioned with $theOtherCommissionFaction, therefore we cannot agree your request to join us.""",,
+CMSNTextUnsuited_MM,CMSNTextUnsuited,$faction.id == matmatika,,"""My apologize we couldn't go through with your request, it would have required a much closer relations between us to do so...""",,
+CMSNTextSuitedPart1_MM,CMSNTextSuitedPart1,$faction.id == matmatika,,"""Well, good, all your information meets our requirements, and we are in need of people like you to create a mutual prospect for both worlds.
+
+But in any case, signing an employment agreement is a very serious decision, and it means that you are fully on board with the ideals associated with Gensoukyou Manufacture and are willing to commit yourself to hold true to their beliefs.
+
+Although you can resign at any time, this will be seen as evidence of abandonment of your beliefs, and will have a detrimental effect on your future relationship with Gensoukyou Manufacture.""",,
+CMSNTextSuitedPart2_MM,CMSNTextSuitedPart2,$faction.id == matmatika,,"""It seems that you made your mind, so if it is confirmed, please sign this document.""",,
+CMSNTextWelcomePart1_MM,CMSNTextWelcomePart1,$faction.id == matmatika,,"""Well, welcome to Gensoukyou, human.
+
+Sage above, miracles be with you, and we will be your reliable support.""",,
+CMSNTextWelcomePart2_MM,CMSNTextWelcomePart2,$faction.id == matmatika,,"""May the Gensoukyou be with you.""",,
+CMSNTextChangeMind_MM,CMSNTextChangeMind,$faction.id == matmatika,,"""I can understand that not everyone have made their mind and withdrawing might not be a bad thing.
+
+So, what else can I do for you?""",,
+CMSNResignAskToConfirm_MM,CMSNResignAskToConfirm,$faction.id == matmatika,,"""It seems you have made your decision... But are you sure you don't want to reconsider anymore? We're working for the mutual future of both worlds.""",,
+CMSNResignConfirmed_MM,CMSNResignConfirmed,$faction.id == matmatika,,"""Well, it looks like you may have found something that you more than than maintaining relations with Gensoukyou.
+
+You are now free to go.""",,
+CMSNResignCancelled_MM,CMSNResignCancelled,$faction.id == matmatika,,"""Wise Decision and may the miracle stay in your favour in the future too.""",,
+#END commission,,,,,,
+,,,,,,
+# aiCores,,,,,,
+aiCores_turnInResponseFM,AICoresTurnedIn,$faction.id == matmatika,FireAll PopulateOptions,"""Although it turned out well, I have to ask, shouldn't someone like you normally keep these entities for yourself in the cargo hold?""",,
+aiCores_turnInOptionSelFM,DialogOptionSelected,"$option == aiCores_startTurnIn
+$faction.id == matmatika",FireAll PopulateCoresTurnInOptions,"""Well, after all, the scholars on the other side are arguing over whether such a shiny core counts as deities. ...... If you provide them for scientific research, we will pay you accordingly.""",,
+#END aiCores,,,,,,

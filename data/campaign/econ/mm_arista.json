@@ -3,7 +3,7 @@
 	"markets":[
 		{
 			"entities":["alculus_moon_1"],
-			"faction":"matmatika",
+			"faction":"hegemony",
 			"size":4,
 			"startingConditions":[
 				"population_4",

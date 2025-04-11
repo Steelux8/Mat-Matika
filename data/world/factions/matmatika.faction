@@ -20,7 +20,7 @@
 		"myth":1,
 	},
 
-	    # variantOverrides restricts hulls to listed variants and adjusts their probability
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
     "variantOverrides":{
     },
 
@@ -151,7 +151,7 @@
 	},
 	"ranks":{
 		"ranks":{
-		    	"factionLeader":{"name":"Vice Admiral"},
+		    "factionLeader":{"name":"Vice Admiral"},
 			"spaceMarshal":{"name":"Rear Admiral"},
 			"spaceAdmiral":{"name":"Flotilla Admiral"},
 			"spaceCommander":{"name":"Fleet Commander"},
@@ -197,13 +197,13 @@
 	},
 	
     "music":{
-        "theme":"dpl_theme",
-        "market_neutral":"dpl_market_neutral",
-	    "market_hostile":"dpl_market_hostile",
-        "market_friendly":"dpl_market_friendly",
-        "encounter_neutral":"dpl_encounter_neutral",
-        "encounter_hostile":"dpl_encounter_hostile",
-        "encounter_friendly":"dpl_encounter_friendly",
+        "theme":"music_tritach_encounter_neutral",
+		"market_neutral":"music_tritach_market_neutral",
+		"market_hostile":"music_tritach_market_hostile",
+		"market_friendly":"music_tritach_market_friendly",
+		"encounter_neutral":"music_tritach_encounter_neutral",
+		"encounter_hostile":"music_tritach_encounter_hostile",
+		"encounter_friendly":"music_tritach_encounter_friendly",
     },    
 	
 },

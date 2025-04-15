@@ -4,26 +4,24 @@ id,trigger,conditions,script,text,options,notes
 # greetings,,,,,,
 greetingFMFriendly,OpenCommLink,"$faction.id == matmatika
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
-FireAll PopulateOptions","""Welcome to Gensoukyou Manufacture!... thats all to say right?""
+FireAll PopulateOptions","""Greetings, fleet captain! Are you here to assist Mat-Matika in its cause?""
 OR
-""A future where humanity and mysticism coexist in harmony is upon us, and you and I have the privilege of being its first beneficiaries.. ""
+""So many of our fleets, each with their own tasks... the plans of our superiors truly are complex and hard to understand. Do you ever wonder what it is they're doing?""
 OR
-"".. Its difficult to have a youkai lover, right?"" for some reason $personName started talking about their love story, its shocking and a little bit embrassing.
-OR
-""Hello there, this is $personName. What can i help you with?""",,
+""Hello, this is $personName. Can I be of assistance, somehow?""",,
 greetingFMHostileWeaker,OpenCommLink,"$faction.id == matmatika
 $faction.hostileToPlayer
-$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""I'm Ready to escape~daze！，But I don't think you'll be able to outrun the ensuing pursuit...""$personName isn't panicking as much as you thought, this person has already made an escape plan.
+$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""You managed to intercept my fleet� what is your plan now? Do you think you can take us down?"" $personName looks at you straight on, in an attempt to intimidate you somehow.
 OR
-""So, you're behind this incident?""$personRank sighed and disconnected the comm in frustration.
+""Why have you come? What is so important to you that you have to disrupt the peace with your blatant terrorism?""
 OR
-""I-L-L-R-U-N-A-W-A-Y!""",cutCommLink:Cut the comm link,
+$personName stares back at you, with a disapproving nod to the sides, before they silently deactivate their comms.",cutCommLink:Cut the comm link,
 greetingFMHostileWeakerDefiant,OpenCommLink,"$faction.id ==  matmatika
 $faction.hostileToPlayer
 $relativeStrength < 0
-$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""Even if the end is disastrous, we will fight with all our might until the last moment!""It seems the $personRank has no intention of surrendering.
+$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""Hostile fleet confirmed. Your numbers do not scare us, spacer! We will show you what preparation amounts to, and you will be left analyzing it inside the rubble of your own destroyed ships!""
 OR
-""Miracles only come to those who believe!""$personName resolute voice came through the comm.",cutCommLink:Cut the comm link,
+""Some have to fall so that the Great Ones can continue their work and succeed in the future! If it is not me who falls today, spacer, it will be you!""",cutCommLink:Cut the comm link,
 greetingFMHostileStronger,OpenCommLink,"$faction.id == matmatika
 $faction.hostileToPlayer
 $relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""You are a threat to our cause and you must be eliminated. It falls upon me to fulfill that role."" $personName signals to the crew on their ship before moving to shut off comms. ""Do not take me the wrong way.""

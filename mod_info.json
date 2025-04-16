@@ -4,5 +4,7 @@
     "author": "Steelux",
     "version": "0.0.2",
     "description": "A group of mathematicians apply their theorems to hyperspace and find what should never be messed with.",
-    "gameVersion": "0.98a"
+    "gameVersion": "0.98a",
+    "modPlugin": "src.author.modname.MatMatikaPlugin",
+    "jars":["jars/Mat-Matika.jar"]
 }
